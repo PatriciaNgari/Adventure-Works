@@ -24,9 +24,9 @@ dbEngine= sa.create_engine(
 try:
     with  psycopg2.connect("dbname=adventure_works user=postgres") as cur:
         conn = cur.cursor()
-        f = open(r'C:\Users\User\Downloads\customeraddress.csv')
+        f = open(r'C:\Users\User\Downloads\customer.csv')
         
-        conn.copy_from(f, 'customer_address', sep=",", null=" ")
+        conn.copy_from(f, 'customer', sep=",", null=" ")
         cur.commit() 
         
         
